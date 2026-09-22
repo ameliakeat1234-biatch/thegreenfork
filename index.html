@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Green Fork Bar & Restaurant</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <!-- Logo / Business Name -->
+        <a href="index.html" class="logo">
+            GREEN FORK BAR & RESTAURANT
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+        <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <img src="images/balbriggan.webp" alt="The Green Fork">
+
+        <div class="hero-overlay">
+
+            <h1>
+                GREAT FOOD.<br>
+                GREAT COMPANY.<br>
+                EVERYONE WELCOME.
+            </h1>
+
+            <p>At Balbriggan Golf Club</p>
+
+        </div>
+
+    </section>
+
+
+<!-- EAT AT THE GREEN FORK -->
+<section class="eat-section">
+
+    <div class="eat-content">
+
+        <span class="eat-label">DINE WITH US</span>
+
+        <h2>
+            EAT AT THE<br>
+            GREEN FORK
+        </h2>
+
+        <div class="eat-line"></div>
+
+        <p>
+            Everyday dining, lunch, Sunday food and our
+            changing specials. Bringing good food and
+            good company together. <br>
+            <a href="https://www.balbriggangolfclub.com/visitors-societies"
+           target="_blank"
+           class="reserve-btn">
+            BOOK A TABLE NOW
+        </a><br>
+        </p>
+
+
+    </div>
+
+</section>
+
+<!-- =========================
+     MENU SECTION
+========================== -->
+
+<section class="menus-section">
+
+    <!-- LEFT: FEATURED MENU IMAGE -->
+    <div class="menu-image-container">
+
+        <a id="menuLink" href="#" target="_blank">
+            <img id="menuImage"
+                 src="images/boujee.jpg"
+                 alt="Breakfast Menu">
+        </a>
+
+    </div>
+
+
+    <!-- RIGHT: MENU CONTENT -->
+    <div class="menus-content">
+
+        <h2>VIEW OUR<br>MENUS</h2>
+
+        <p>
+            Explore our selection of breakfast, lunch and dinner menus,
+            made with fresh ingredients and something for everyone.
+        </p>
+
+
+        <!-- MENU DROPDOWN -->
+        <div class="menu-dropdown">
+
+            <button class="menu-dropdown-btn" onclick="toggleMenuDropdown()">
+                <span id="selectedMenu">OUR MENUS</span>
+            </button>
+
+            <div class="menu-dropdown-options" id="menuDropdown">
+
+                <a href="#" onclick="selectMenu('BREAKFAST', 'images/boujee.jpg', '#')">
+                    BREAKFAST
+                </a>
+
+                <a href="#" onclick="selectMenu('LUNCH', 'images/lunch.png', '#')">
+                    LUNCH
+                </a>
+
+                <a href="#" onclick="selectMenu('DINNER', 'images/dinner.png', '#')">
+                    DINNER
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GOLF SOCIETIES & GROUPS -->
+<section class="societies-section">
+
+    <div class="societies-content">
+        <span class="societies-label">BALBRIGGAN GOLF CLUB</span>
+
+        <h2>GOLF SOCIETIES<br>&amp; GROUPS</h2>
+
+        <div class="societies-line"></div>
+
+        <p>
+            Food and hospitality for visiting societies and golf groups,
+            with delicious dining and a welcoming atmosphere for everyone.
+        </p>
+
+        <a href="https://www.balbriggangolfclub.com/visitors-societies"
+           target="_blank"
+           class="here-societies-btn">
+            HERE
+        </a>
+
+        
+    </div>
+
+    <div class="societies-image">
+        <img src="images/societies.webp" alt="Golf society dining at The Green Fork">
+    </div>
+
+</section>
+
+
+
+
+    <!-- =========================
+         BOOK / CONTACT SECTION
+    ========================== -->
+
+    <section class="events-section">
+
+        <div class="events-overlay">
+
+            <h2>FUNCTIONS &amp; EVENTS</h2>
+
+            <p>
+                Our Services include Communions, Confirmations, In-Home Catering, Family Gatherings, 
+                Club Events and more. Contact here for further details.
+            </p>
+
+            <a href="contact.html" class="book-here-btn">Book Here</a>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- =========================
+         FIND US SECTION
+    ========================== -->
+
+
+<section class="find-section">
+
+    <!-- LEFT SIDE -->
+    <div class="find-content">
+
+        <h2>FIND US</h2>
+
+        <div class="social-links">
+
+            <a href="https://www.instagram.com/thegreenforkbg/" target="_blank" aria-label="Instagram">
+                <img src="images/instagram_logo.png" alt="Instagram">
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <img src="images/facebook_logo.png" alt="Facebook">
+            </a>
+
+            <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok">
+                <img src="images/tiktok_logo.png" alt="TikTok">
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="find-map">
+
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2367.872036102658!2d-6.185128873374232!3d53.59574485603364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486723598b679fe9%3A0x7830be34f3075f7b!2sGreen%20Fork%20Bar%26Restaurant!5e0!3m2!1sen!2sie!4v1790013547411!5m2!1sen!2sie"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LEFT: EXPLORE -->
+        <div class="footer-column footer-explore">
+            <h3>EXPLORE THE SITE</h3>
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+
+        <!-- CENTRE: LOGO -->
+        <div class="footer-column footer-brand">
+            <h2>THE GREEN FORK</h2>
+
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo.jpg" alt="The Green Fork Logo">
+            </a>
+        </div>
+
+
+        <!-- RIGHT: FIND US -->
+        <div class="footer-column footer-find">
+            <h3>FIND US</h3>
+
+            <div class="footer-social-links">
+
+                <a href="https://www.instagram.com/thegreenforkbg/" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://www.tiktok.com/" target="_blank">
+                    TikTok
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 The Green Fork. All Rights Reserved.
+        </p>
+
+        <p>
+            This site was created by
+            <a href="mailto:ameliakeat2006@gmail.com">
+                Amelia Keating
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+    <!-- =========================
+         COPYRIGHT
+    ========================= -->
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
