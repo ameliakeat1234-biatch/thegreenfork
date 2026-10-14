@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Green Fork - Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="contact_styles.css">
+    <link rel="stylesheet" href="format_styles.css">
+</head>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+    <button
+        class="menu-btn"
+        id="menuButton"
+        type="button"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false">
+        ☰
+    </button>
+
+        <!-- Logo / Business Name -->
+        <a href="index.html" class="logo">
+            GREEN FORK BAR & RESTAURANT
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+        <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
+
+    </nav>
+
+<body>
+    <div class="container">
+        <h1 class="brand">The <span>Green</span> Fork</h1>
+        <div class="wrapper">
+            <div class="company-info">
+                <h3>Contact Us Form</h3>
+                <ul>
+                    <li><i class="fa fa-road"></i> Balbriggan Golf Club Co. Dublin K32 HH00</li>
+                    <li><i class="fa fa-phone"></i> (555) 555-555</li>
+                    <li><i class="fa fa-envelope"></i> thegreenforkcontact@gmail.com</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3>Email Us</h3>
+                <div class="alert">Your message has been sent</div>
+                <form id="contactForm">
+                    <p>
+                        <label>Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </p>
+                    <p>
+                        <label>Subject</label>
+                        <input type="text" name="subject" id="subject">
+                    </p>
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                    </p>
+                    <p class="full">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" id="message" required></textarea>
+                    </p>
+                    <p class="full">
+                        <button type="submit">Submit</button>
+                        <p id="form-status" role="status" aria-live="polite"></p>
+
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LEFT: EXPLORE -->
+        <div class="footer-column footer-explore">
+            <h3>EXPLORE THE SITE</h3>
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+
+        <!-- CENTRE: LOGO -->
+        <div class="footer-column footer-brand">
+            <h2>THE GREEN FORK</h2>
+
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo.jpg" alt="The Green Fork Logo">
+            </a>
+        </div>
+
+
+        <!-- RIGHT: FIND US -->
+        <div class="footer-column footer-find">
+            <h3>FIND US</h3>
+
+            <div class="footer-social-links">
+
+                <a href="https://www.instagram.com/thegreenforkbg/" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://www.tiktok.com/" target="_blank">
+                    TikTok
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 The Green Fork. All Rights Reserved.
+        </p>
+
+        <p>
+            This site was created by
+            <a href="mailto:ameliakeat2006@gmail.com">
+                Amelia Keating
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+    <!-- =========================
+         COPYRIGHT
+    ========================= -->
+
+
+
+<script src="script.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<!-- Realtime Database SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Your JavaScript -->
+<script src="contact.js"></script>
+<script src="format.js"></script>
+</body>
+</html>

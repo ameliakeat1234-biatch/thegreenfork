@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Green Fork</title>
+    <title>Green Fork Bar & Restaurant</title>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu_styles.css">
 </head>
 
 <body>
@@ -17,14 +18,11 @@
 
     <nav class="navbar">
 
-        <!-- Mobile menu button -->
-        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
-            ☰
-        </button>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
         <!-- Logo / Business Name -->
         <a href="index.html" class="logo">
-            THE GREEN FORK
+            GREEN FORK BAR & RESTAURANT
         </a>
 
         <!-- Navigation Links -->
@@ -35,42 +33,256 @@
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
 
+        <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
+
     </nav>
 
 
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
 
-    <section class="hero">
+<!-- =========================
+     OUR MENU
+========================= -->
 
-        <img src="images/green-fork-hero.jpg" alt="The Green Fork">
+<section class="menu-section">
 
-        <div class="hero-overlay">
+    <div class="section-heading">
+        <span>Discover something delicious</span>
+        <h2>OUR MENU</h2>
+    </div>
 
-            <h1>
-                GREAT FOOD.<br>
-                GREAT COMPANY.<br>
-                EVERYONE WELCOME
-            </h1>
+    <div class="menu-cards">
 
-            <p>Balbriggan Golf Club</p>
+        <!-- STARTERS -->
+        <div class="menu-card">
+
+            <a href="breakfast.html" class="menu-image-link">
+                <img src="images/breakfast-img.jpg" alt="Starters">
+            </a>
+
+            <h3>BREAKFAST & BRUNCH</h3>
+
+            <p>Food</p>
+
+            <a href="menu.html#starters" class="menu-button">
+                VIEW STARTERS
+            </a>
 
         </div>
 
-    </section>
+
+        <!-- MAIN COURSES -->
+        <div class="menu-card">
+
+            <a href="menu.html#main-courses" class="menu-image-link">
+                <img src="images/cocktail-img.jpg" alt="Main Courses">
+            </a>
+
+            <h3>DRINKS MENU</h3>
+
+            <p>Food</p>
+
+            <a href="menu.html#main-courses" class="menu-button">
+                VIEW MAIN COURSES
+            </a>
+
+        </div>
+
+
+        <!-- DESSERTS -->
+        <div class="menu-card">
+
+            <a href="menu.html#desserts" class="menu-image-link">
+                <img src="images/desserts.jpg" alt="Desserts">
+            </a>
+
+            <h3>CLUBHOUSE FAVOURITES</h3>
+
+            <p>Food</p>
+
+            <a href="menu.html#desserts" class="menu-button">
+                VIEW DESSERTS
+            </a>
+
+        </div>
+
+        <div class="menu-card">
+
+            <a href="menu.html#desserts" class="menu-image-link">
+                <img src="images/desserts.jpg" alt="Desserts">
+            </a>
+
+            <h3>Á LA CARTE MENU</h3>
+
+            <p>Food</p>
+
+            <a href="menu.html#desserts" class="menu-button">
+                VIEW DESSERTS
+            </a>
+
+        </div>
+
+        <div class="menu-card">
+
+            <a href="menu.html#desserts" class="menu-image-link">
+                <img src="images/desserts.jpg" alt="Desserts">
+            </a>
+
+            <h3>SUNDAY CARVARY</h3>
+
+            <p>Food</p>
+
+            <a href="menu.html#desserts" class="menu-button">
+                VIEW DESSERTS
+            </a>
+
+        </div>
+
+        <div class="menu-card">
+
+            <a href="menu.html#desserts" class="menu-image-link">
+                <img src="images/desserts.jpg" alt="Desserts">
+            </a>
+
+            <h3>BAR FOOD</h3>
+
+            <p>Food</p>
+
+            <a href="menu.html#desserts" class="menu-button">
+                VIEW DESSERTS
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOK A TABLE
+========================= -->
+
+<section class="booking-section">
+
+    <div class="booking-decoration"></div>
+
+    <div class="booking-content">
+
+        <span class="booking-label">
+            Reservations
+        </span>
+
+        <h2>BOOK A TABLE</h2>
+
+        <form class="booking-form">
+
+            <select>
+                <option>1 Person</option>
+                <option>2 People</option>
+                <option>3 People</option>
+                <option>4 People</option>
+                <option>5+ People</option>
+            </select>
+
+            <input type="date">
+
+            <select>
+                <option>7:00 pm</option>
+                <option>7:30 pm</option>
+                <option>8:00 pm</option>
+                <option>8:30 pm</option>
+                <option>9:00 pm</option>
+            </select>
+
+            <button type="submit">
+                BOOK A TABLE
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+    
+    <footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LEFT: EXPLORE -->
+        <div class="footer-column footer-explore">
+            <h3>EXPLORE THE SITE</h3>
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+
+        <!-- CENTRE: LOGO -->
+        <div class="footer-column footer-brand">
+            <h2>THE GREEN FORK</h2>
+
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo.jpg" alt="The Green Fork Logo">
+            </a>
+        </div>
+
+
+        <!-- RIGHT: FIND US -->
+        <div class="footer-column footer-find">
+            <h3>FIND US</h3>
+
+            <div class="footer-social-links">
+
+                <a href="https://www.instagram.com/thegreenforkbg/" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://www.tiktok.com/" target="_blank">
+                    TikTok
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 The Green Fork. All Rights Reserved.
+        </p>
+
+        <p>
+            This site was created by
+            <a href="mailto:ameliakeat2006@gmail.com">
+                Amelia Keating
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
 
 
     <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-        <p>© 2026 The Green Fork. All Rights Reserved.</p>
-    </footer>
+         COPYRIGHT
+    ========================= -->
 
 
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Green Fork Bar & Restaurant</title>
+
+<!-- Bootstrap CSS FIRST -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<!-- Your custom CSS AFTER Bootstrap -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="menu_styles_breakfast.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+    <button class="menu-btn"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="navLinks"
+            aria-expanded="false"
+            onclick="toggleMenu()">
+        ☰
+    </button>
+
+        <!-- Logo / Business Name -->
+        <a href="index.html" class="logo">
+            GREEN FORK BAR & RESTAURANT
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+        <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
+
+    </nav>
+<!-- GOOGLE FONTS: keep these if already imported on your website -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<section class="breakfast-menu" id="breakfast-menu">
+
+    <!-- MENU HEADER -->
+    <header class="menu-header">
+        <p class="menu-brand">THE GREEN FORK</p>
+        <p class="menu-subtitle">BAR & RESTAURANT</p>
+        <p class="menu-location">Balbriggan Golf Club</p>
+
+        <div class="menu-ornament">
+            <span></span><i>✦</i><span></span>
+        </div>
+
+        <h1>Breakfast <span>&</span> Brunch</h1>
+        <p class="menu-intro">
+            Freshly prepared favourites, wholesome choices
+            and beautiful mornings at The Green Fork.
+        </p>
+        <span class="serving-time">SERVED UNTIL 2PM</span>
+    </header>
+
+    <!-- MENU FILTERS -->
+    <nav class="menu-filters" aria-label="Filter menu categories">
+        <button class="filter-button active" data-filter="all"
+                aria-pressed="true">All</button>
+        <button class="filter-button" data-filter="traditional"
+                aria-pressed="false">Traditional</button>
+        <button class="filter-button" data-filter="healthy"
+                aria-pressed="false">Healthy Choices</button>
+        <button class="filter-button" data-filter="classics"
+                aria-pressed="false">Classics</button>
+        <button class="filter-button" data-filter="omelettes"
+                aria-pressed="false">Omelettes</button>
+        <button class="filter-button" data-filter="bakery"
+                aria-pressed="false">Bakery</button>
+        <button class="filter-button" data-filter="drinks"
+                aria-pressed="false">Coffee & Drinks</button>
+    </nav>
+
+    <!-- TWO-COLUMN MENU -->
+    <div class="menu-columns">
+
+        <!-- LEFT COLUMN -->
+        <div class="menu-column">
+
+            <section class="menu-category" data-category="traditional">
+                <div class="category-heading">
+                    <h2>Traditional Breakfast</h2>
+                    <p>Tea & Americano included</p>
+                </div>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Full Irish Breakfast</h3>
+                        <span class="price">€14.95</span>
+                    </div>
+                    <p>Premium pork sausages, rindless back bacon,
+                       black & white pudding, free-range fried egg,
+                       baked beans in tomato sauce, grilled tomato,
+                       sautéed mushrooms, hash brown and toasted sourdough.</p>
+                    <span class="allergen-numbers">1 · 3 · 6 · 7 · 10</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Mini Irish Breakfast</h3>
+                        <span class="price">€11.95</span>
+                    </div>
+                    <p>Premium pork sausages, rindless back bacon,
+                       free-range fried egg, baked beans, hash brown
+                       and toasted sourdough.</p>
+                    <span class="allergen-numbers">1 · 3 · 6 · 7 · 10</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Vegetarian Breakfast</h3>
+                        <span class="price">€12.95</span>
+                    </div>
+                    <p>Free-range eggs cooked to your liking,
+                       sautéed mushrooms, grilled tomato, baked beans,
+                       hash brown, fresh avocado and toasted sourdough.</p>
+                    <span class="allergen-numbers">1 · 3</span>
+                </article>
+            </section>
+
+            <section class="menu-category" data-category="classics">
+                <div class="category-heading">
+                    <h2>Breakfast Classics</h2>
+                </div>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Breakfast Bap</h3>
+                        <span class="price">€9.95</span>
+                    </div>
+                    <p>Premium pork sausage, rindless back bacon
+                       and a free-range fried egg served in a
+                       toasted brioche bap with tomato relish.</p>
+                    <span class="allergen-numbers">1 · 3 · 6 · 7 · 10</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Eggs & Bacon</h3>
+                        <span class="price">€10.95</span>
+                    </div>
+                    <p>Two free-range eggs cooked to your liking,
+                       served with crispy rindless back bacon
+                       and toasted sourdough.</p>
+                    <span class="allergen-numbers">1 · 3</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Eggs Royale</h3>
+                        <span class="price">€14.50</span>
+                    </div>
+                    <p>Poached free-range eggs, smoked salmon
+                       and toasted sourdough.</p>
+                    <span class="allergen-numbers">1 · 3 · 4 · 7</span>
+                </article>
+            </section>
+
+            <section class="menu-category" data-category="omelettes">
+                <div class="category-heading">
+                    <h2>Omelettes</h2>
+                </div>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Three-Egg Omelette</h3>
+                        <span class="price">€12.95</span>
+                    </div>
+                    <p>Choose any three fillings: ham, mature
+                       cheddar, mushroom or onion.</p>
+                    <p class="item-note">
+                        Served with salad and toasted sourdough.
+                    </p>
+                    <span class="allergen-numbers">1 · 3 · 7</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Brioche French Toast</h3>
+                        <span class="price">€11.95</span>
+                    </div>
+                    <p>Served with maple syrup and fresh berries.</p>
+                    <p class="item-note">Add crispy bacon for €3.00.</p>
+                    <span class="allergen-numbers">1 · 3 · 7</span>
+                </article>
+
+                <div class="extra-fillings">
+                    EXTRA FILLINGS — €1.50 EACH
+                </div>
+            </section>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="menu-column">
+
+            <section class="menu-category" data-category="healthy">
+                <div class="category-heading">
+                    <h2>Healthy Choices</h2>
+                </div>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Smashed Avocado on Sourdough</h3>
+                        <span class="price">€12.95</span>
+                    </div>
+                    <p>Freshly smashed avocado, lightly seasoned
+                       and topped with a poached free-range egg,
+                       served on organic sourdough.</p>
+                    <span class="allergen-numbers">1 · 3</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>High-Protein Breakfast</h3>
+                        <span class="price">€15.95</span>
+                    </div>
+                    <p>Turkey sausage, turkey bacon, smoked salmon,
+                       fresh avocado, free-range eggs cooked to
+                       your liking and toasted sourdough.</p>
+                    <span class="allergen-numbers">1 · 3 · 4</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>High-Protein Omelette</h3>
+                        <span class="price">€13.95</span>
+                    </div>
+                    <p>Three free-range eggs with chopped chicken
+                       breast, halloumi cheese and crispy bacon lardons.</p>
+                    <span class="allergen-numbers">3 · 7</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Superfood Breakfast Bowl</h3>
+                        <span class="price">€10.95</span>
+                    </div>
+                    <p>Greek yoghurt, fresh berries, homemade
+                       granola, chia seeds and organic Irish honey.</p>
+                    <span class="allergen-numbers">1 · 7</span>
+                </article>
+
+                <article class="menu-item">
+                    <div class="item-heading">
+                        <h3>Acai Bowl</h3>
+                        <span class="price">€11.95</span>
+                    </div>
+                    <p>Acai, banana, fresh berries and homemade granola.</p>
+                    <p class="item-note">Choose your favourite topping:</p>
+                    <p class="topping-list">
+                        Nutella · Peanut Butter · Biscoff Spread
+                    </p>
+                    <span class="allergen-numbers">1 · 5 · 7 · 8</span>
+                </article>
+            </section>
+
+            <section class="menu-category" data-category="bakery">
+                <div class="category-heading">
+                    <h2>Fresh Bakery</h2>
+                    <p>Freshly baked every morning</p>
+                </div>
+
+                <article class="menu-item compact-item">
+                    <div class="item-heading">
+                        <h3>Butter Croissant</h3>
+                        <span class="price">€3.20</span>
+                    </div>
+                    <span class="allergen-numbers">1 · 3 · 7</span>
+                </article>
+
+                <article class="menu-item compact-item">
+                    <div class="item-heading">
+                        <h3>Pain au Chocolat</h3>
+                        <span class="price">€3.50</span>
+                    </div>
+                    <span class="allergen-numbers">1 · 3 · 7</span>
+                </article>
+
+                <article class="menu-item compact-item">
+                    <div class="item-heading">
+                        <h3>Scone of the Day</h3>
+                        <span class="price">€3.80</span>
+                    </div>
+                    <span class="allergen-numbers">1 · 3 · 7</span>
+                </article>
+
+                <article class="menu-item compact-item">
+                    <div class="item-heading">
+                        <h3>Selection of Fresh Pastries</h3>
+                        <span class="price">From €3.20</span>
+                    </div>
+                    <span class="allergen-numbers">1 · 3 · 7</span>
+                </article>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- COFFEE & DRINKS -->
+    <section class="menu-category drinks-category" data-category="drinks">
+        <div class="category-heading">
+            <h2>Coffee & Drinks</h2>
+            <p>Beautifully brewed, just the way you like it</p>
+        </div>
+
+        <div class="drinks-grid">
+
+            <article class="drink-item">
+                <h3>Americano</h3>
+                <span class="price">€3.50</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Latte</h3>
+                <span class="price">€4.20</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Espresso</h3>
+                <span class="price">€2.90</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Tea</h3>
+                <span class="price">€3.20</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Flat White</h3>
+                <span class="price">€3.90</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Herbal Tea</h3>
+                <span class="price">€3.50</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Cappuccino</h3>
+                <span class="price">€3.90</span>
+            </article>
+
+            <article class="drink-item">
+                <h3>Hot Chocolate</h3>
+                <span class="price">€4.20</span>
+            </article>
+
+        </div>
+
+        <p class="drinks-note">
+            Add tea or Americano to any breakfast for €2.50.
+        </p>
+    </section>
+
+
+    <footer class="menu-footer">
+        <span>THE GREEN FORK</span>
+        <p>All prices include VAT.</p>
+    </footer>
+
+    <br>
+    <!-- ALLERGY INFORMATION -->
+    <div class="allergy-panels">
+
+        <div class="allergy-notice">
+            <h2>Allergy Information</h2>
+            <div class="small-gold-line"></div>
+            <p>
+                Please inform your server of any food allergies
+                or dietary requirements before ordering.
+            </p>
+            <p>
+                While every care is taken, food is prepared in
+                a kitchen where allergens are present.
+                Cross-contamination cannot be completely avoided.
+            </p>
+            <button class="text-button" id="allergyToggle"
+                    aria-expanded="false" aria-controls="allergenGuide">
+                View Allergen Guide <span>＋</span>
+            </button>
+        </div>
+
+        <div class="allergen-guide" id="allergenGuide" hidden>
+            <h2>EU 14 Allergen Guide</h2>
+            <ol>
+                <li>Cereals containing gluten</li>
+                <li>Crustaceans</li>
+                <li>Eggs</li>
+                <li>Fish</li>
+                <li>Peanuts</li>
+                <li>Soybeans</li>
+                <li>Milk</li>
+                <li>Tree nuts</li>
+                <li>Celery</li>
+                <li>Mustard</li>
+                <li>Sesame</li>
+                <li>Sulphur dioxide & sulphites</li>
+                <li>Lupin</li>
+                <li>Molluscs</li>
+            </ol>
+        </div>
+
+    </div>
+
+</section>
+    <footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- LEFT: EXPLORE -->
+        <div class="footer-column footer-explore">
+            <h3>EXPLORE THE SITE</h3>
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+
+        <!-- CENTRE: LOGO -->
+        <div class="footer-column footer-brand">
+            <h2>THE GREEN FORK</h2>
+
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo.jpg" alt="The Green Fork Logo">
+            </a>
+        </div>
+
+
+        <!-- RIGHT: FIND US -->
+        <div class="footer-column footer-find">
+            <h3>FIND US</h3>
+
+            <div class="footer-social-links">
+
+                <a href="https://www.instagram.com/thegreenforkbg/" target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://www.tiktok.com/" target="_blank">
+                    TikTok
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 The Green Fork. All Rights Reserved.
+        </p>
+
+        <p>
+            This site was created by
+            <a href="mailto:ameliakeat2006@gmail.com">
+                Amelia Keating
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your own JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

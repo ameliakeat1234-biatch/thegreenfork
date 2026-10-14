@@ -1,0 +1,662 @@
+
+/* ==========================================
+   THE GREEN FORK - BREAKFAST & BRUNCH
+========================================== */
+
+.breakfast-menu {
+    --cream: #f5f1e8;
+    --paper: #fffdf7;
+    --green: #1d2b1f;
+    --gold: #a68b55;
+    --muted: #777568;
+    --line: #d9cba9;
+
+    width: 100%;
+    padding: 110px 5% 55px;
+    box-sizing: border-box;
+
+    background: var(--cream);
+    color: var(--green);
+
+    font-family: "Cormorant Garamond", serif;
+}
+
+.breakfast-menu *,
+.breakfast-menu *::before,
+.breakfast-menu *::after {
+    box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+.menu-header {
+    max-width: 1050px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.menu-brand {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    font-size: clamp(42px, 7vw, 85px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 5px;
+}
+
+.menu-subtitle {
+    margin: 4px 0 0;
+    color: var(--gold);
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(12px, 2vw, 21px);
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.menu-location {
+    margin: 8px 0 0;
+    font-size: 23px;
+    font-style: italic;
+}
+
+.menu-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto 14px;
+}
+
+.menu-ornament span {
+    width: 75px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.menu-ornament i {
+    color: var(--gold);
+    font-size: 14px;
+    font-style: normal;
+}
+
+.menu-header h1 {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    font-size: clamp(29px, 4.5vw, 48px);
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.25;
+}
+
+.menu-header h1 span {
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+}
+
+.menu-intro {
+    max-width: 600px;
+    margin: 15px auto 20px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: #626356;
+}
+
+.serving-time {
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid var(--gold);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+
+/* ALLERGY PANELS */
+
+.allergy-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    max-width: 1100px;
+    margin: 0 auto 28px;
+}
+
+.allergy-notice,
+.allergen-guide {
+    padding: 25px 28px;
+    border: 1px solid var(--gold);
+    background: rgba(255, 253, 247, 0.75);
+    text-align: center;
+}
+
+.allergy-notice h2,
+.allergen-guide h2 {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.small-gold-line {
+    width: 45px;
+    height: 1px;
+    margin: 14px auto;
+    background: var(--gold);
+}
+
+.allergy-notice p {
+    margin: 12px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.text-button {
+    margin-top: 8px;
+    padding: 8px 0;
+
+    border: none;
+    border-bottom: 1px solid var(--gold);
+    background: transparent;
+    color: var(--green);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.text-button span {
+    margin-left: 7px;
+    color: var(--gold);
+}
+
+.allergen-guide[hidden] {
+    display: none;
+}
+
+.allergen-guide ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px 22px;
+
+    margin: 20px 0 0;
+    padding-left: 25px;
+    text-align: left;
+
+    font-size: 15px;
+}
+
+.allergen-guide li {
+    padding-left: 3px;
+}
+
+
+/* CATEGORY FILTER BUTTONS */
+
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+
+    max-width: 1100px;
+    margin: 0 auto 38px;
+    padding: 18px 0;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.filter-button {
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--green);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.filter-button:hover {
+    border-color: var(--gold);
+}
+
+.filter-button.active {
+    border-color: var(--green);
+    background: var(--green);
+    color: var(--paper);
+}
+
+
+/* MAIN TWO-COLUMN LAYOUT */
+
+.menu-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 38px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu-column {
+    min-width: 0;
+}
+
+.menu-column:first-child {
+    padding-right: 30px;
+    border-right: 1px solid var(--line);
+}
+
+
+/* CATEGORY HEADINGS */
+
+.menu-category {
+    min-width: 0;
+    margin-bottom: 28px;
+}
+
+.category-heading {
+    margin-bottom: 17px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gold);
+    text-align: center;
+}
+
+.category-heading h2 {
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(15px, 1.7vw, 21px);
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
+
+.category-heading p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+
+/* INDIVIDUAL DISHES */
+
+.menu-item {
+    margin: 0 0 19px;
+}
+
+.item-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 4px;
+}
+
+.item-heading h3,
+.drink-item h3 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.price {
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.menu-item > p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.38;
+    color: #414238;
+}
+
+.menu-item .item-note {
+    font-style: italic;
+    color: var(--muted);
+}
+
+.allergen-numbers {
+    display: block;
+    margin-top: 5px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #777568;
+}
+
+.topping-list {
+    font-weight: 600;
+}
+
+
+/* EXTRA FILLINGS */
+
+.extra-fillings {
+    margin: 18px 0 8px;
+    padding: 12px 8px;
+
+    border: 1px solid var(--gold);
+    text-align: center;
+
+    font-family: "Cinzel", serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+/* FRESH BAKERY */
+
+.compact-item {
+    margin-bottom: 14px;
+}
+
+.compact-item .item-heading h3 {
+    font-size: 19px;
+}
+
+
+/* COFFEE AND DRINKS */
+
+.drinks-category {
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 25px 30px;
+
+    border: 1px solid var(--gold);
+    background: var(--paper);
+}
+
+.drinks-category .category-heading {
+    border-bottom: none;
+}
+
+.drinks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 55px;
+    row-gap: 0;
+}
+
+.drink-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 9px 0;
+    border-bottom: 1px solid #e9e1d1;
+}
+
+.drink-item h3 {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.drink-item .price {
+    font-size: 18px;
+}
+
+.drinks-note {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 17px;
+    font-style: italic;
+}
+
+
+/* FOOTER */
+
+.menu-footer {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--gold);
+    text-align: center;
+}
+
+.menu-footer > span {
+    font-family: "Cinzel", serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.menu-footer p {
+    margin: 7px 0 0;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+
+/* CATEGORY FILTER STATES */
+
+.menu-category[hidden] {
+    display: none !important;
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .breakfast-menu {
+        padding: 55px 4% 40px;
+    }
+
+    .menu-brand {
+        letter-spacing: 3px;
+    }
+
+    .menu-columns {
+        gap: 25px;
+    }
+
+    .menu-column:first-child {
+        padding-right: 20px;
+    }
+
+    .item-heading {
+        gap: 8px;
+    }
+
+    .item-heading h3 {
+        font-size: 19px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .allergy-panels {
+        gap: 14px;
+    }
+
+    .allergy-notice,
+    .allergen-guide {
+        padding: 20px 16px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .breakfast-menu {
+        padding: 42px 18px 35px;
+    }
+
+    .menu-header {
+        margin-bottom: 30px;
+    }
+
+    .menu-brand {
+        font-size: clamp(31px, 9vw, 47px);
+        letter-spacing: 1.5px;
+    }
+
+    .menu-subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .menu-location {
+        font-size: 20px;
+    }
+
+    .menu-header h1 {
+        font-size: 29px;
+        letter-spacing: 1px;
+    }
+
+    .menu-intro {
+        font-size: 18px;
+    }
+
+    .allergy-panels {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .allergy-notice,
+    .allergen-guide {
+        padding: 21px 18px;
+    }
+
+    .allergen-guide ol {
+        gap: 9px 15px;
+        font-size: 14px;
+    }
+
+    .menu-filters {
+        justify-content: flex-start;
+        gap: 7px;
+        margin-bottom: 30px;
+    }
+
+    .filter-button {
+        padding: 10px 12px;
+        font-size: 9px;
+    }
+
+    .menu-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .menu-column:first-child {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .menu-category {
+        margin-bottom: 32px;
+    }
+
+    .category-heading h2 {
+        font-size: 18px;
+    }
+
+    .item-heading h3 {
+        font-size: 21px;
+    }
+
+    .menu-item > p {
+        font-size: 16px;
+    }
+
+    .drinks-category {
+        margin-top: 10px;
+        padding: 22px 15px;
+    }
+
+    .drinks-grid {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    .drink-item h3 {
+        font-size: 20px;
+    }
+
+    .menu-footer {
+        margin-top: 25px;
+    }
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .filter-button {
+        transition: none;
+    }
+}
+
+
+.breakfast-menu .btn-success {
+    background-color: #1d2b1f;
+    border-color: #1d2b1f;
+}
+
+.breakfast-menu .btn-outline-success {
+    color: #1d2b1f;
+    border-color: #a68b55;
+}
+
+.breakfast-menu .btn-outline-success:hover {
+    background-color: #1d2b1f;
+    border-color: #1d2b1f;
+    color: #fffdf7;
+}
+
+
+/* Hide menu filter buttons on desktop */
+.breakfast-menu .menu-filters {
+    display: none;
+}
+
+/* Show menu filter buttons on phones and tablets */
+@media (max-width: 768px) {
+    .breakfast-menu .menu-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+
+        margin: 0 auto 30px;
+        padding: 18px 0;
+
+        border-top: 1px solid #d9cba9;
+        border-bottom: 1px solid #d9cba9;
+    }
+}
