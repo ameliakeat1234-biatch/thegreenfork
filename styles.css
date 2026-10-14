@@ -24,9 +24,6 @@ a {
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
 
 /* =========================
    NAVBAR
@@ -34,54 +31,41 @@ a {
 
 .navbar {
     font-family: "Cormorant Garamond", serif;
-
     width: 100%;
     height: 85px;
-
-    /* Transparent at the top */
-    background-color: transparent;
+    padding: 0 5vw;
 
     display: flex;
     align-items: center;
-
-    padding: 0 5vw;
 
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
 
-    z-index: 1000;
-
-    /* Smooth change when scrolling */
-    transition:
-        background-color 0.4s ease,
-        box-shadow 0.4s ease;
+    background: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 /* Business name */
 
 .logo {
+    color: #fff;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 2px;
     white-space: nowrap;
-
-    color: #ffffff;
-
-    transition: color 0.4s ease;
+    transition: color 0.3s ease;
 }
 
-
-/* Navigation */
+/* Desktop navigation */
 
 .nav-links {
     list-style: none;
-
     display: flex;
     align-items: center;
-
     gap: 45px;
+
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -91,68 +75,30 @@ a {
 }
 
 .nav-links a {
+    position: relative;
+    color: #fff;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
-
-    position: relative;
-
-    color: #ffffff;
-
-    transition: color 0.4s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-links a::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     bottom: -7px;
-
     width: 0;
     height: 2px;
-
-    background-color: #ffffff;
-
+    background: currentColor;
     transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #ffffff;
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
 
-/* =========================
-   NAVBAR AFTER SCROLL
-========================= */
-
-.navbar.scrolled {
-    background-color: #f5f1e8;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-.navbar.scrolled .logo {
-    color: #1d2b1f;
-}
-
-.navbar.scrolled .nav-links a {
-    color: #1d2b1f;
-}
-
-.navbar.scrolled .nav-links a::after {
-    background-color: #456b45;
-}
-
-.navbar.scrolled .nav-links a:hover {
-    color: #456b45;
-}
-
-/* LOGO ON RIGHT */
+/* Logo image, if used */
 
 .nav-logo {
     margin-left: auto;
@@ -168,26 +114,129 @@ a {
     display: block;
 }
 
-
-/* Mobile menu button */
+/* Hamburger button */
 
 .menu-btn {
     display: none;
-
-    border: none;
-    background: none;
-
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-family: Arial, sans-serif;
     font-size: 28px;
-
+    line-height: 1;
     cursor: pointer;
-
-    color: #1d2b1f;
-
-
+    z-index: 10001;
 }
 
-.menu-btn.active {
-        color: #ffffff;
+/* Navbar after scrolling */
+
+.navbar.scrolled {
+    background: #f5f1e8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.navbar.scrolled .logo,
+.navbar.scrolled .nav-links a {
+    color: #1d2b1f;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 900px) {
+    .navbar {
+        height: 70px;
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .menu-btn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10002;
+
+        background: transparent;
+        border: none;
+        color: #fff;
+
+        font-size: 30px;
+        line-height: 1;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .navbar.scrolled .menu-btn {
+        color: #1d2b1f;
+    }
+
+    /* Keep the button visible and white while the sidebar is open */
+    .menu-btn.active {
+        color: #fff;
+    }
+
+    /* Keep hamburger visible when scrolling */
+    .navbar.scrolled .menu-btn {
+        color: #1d2b1f;
+    }
+
+    .navbar.scrolled .menu-btn.active {
+        color: #fff;
+    }
+
+    /* Centre the business name */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(10px, 3vw, 16px);
+        letter-spacing: 1.5px;
+    }
+
+    /* Slide-out navigation */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: min(270px, 80vw);
+        height: 100vh;
+        padding: 100px 30px 40px;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+
+        background: #1d2b1f;
+
+        /* Hidden off the left of the screen */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+
+        z-index: 10000;
+    }
+
+    /* Open the menu */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    /* Keep sidebar links white, even after scrolling */
+    .nav-links a,
+    .navbar.scrolled .nav-links a {
+        color: #fff;
+        font-size: 17px;
+    }
+
+    .nav-links a::after {
+        background: #fff;
+    }
 }
 
 
@@ -1209,129 +1258,6 @@ a {
 ========================= */
 
 @media (max-width: 900px) {
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    .navbar {
-        height: 70px;
-
-        justify-content: center;
-
-        padding: 0 20px;
-    }
-
-
-    /* Hamburger */
-
-    .menu-btn {
-        display: block;
-
-        position: absolute;
-
-        left: 20px;
-        top: 50%;
-
-        transform: translateY(-50%);
-
-        z-index: 2100;
-        color: #ffffff;
-    }
-
-
-    /* Logo */
-
-    .logo {
-        position: absolute;
-
-        left: 50%;
-        transform: translateX(-50%);
-
-        font-size: clamp(10px, 3vw, 16px);
-
-        letter-spacing: 1.5px;
-    }
-
-
-    /* =========================
-       SIDE MENU
-    ========================= */
-
-    .nav-links {
-        position: fixed;
-
-        top: 0;
-        left: -280px;
-
-        width: min(270px, 80vw);
-        height: 100vh;
-
-        background-color: #1d2b1f;
-
-        margin: 0;
-        padding: 100px 35px 40px;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        gap: 30px;
-
-        /* IMPORTANT */
-        transform: none;
-
-        transition: left 0.35s ease;
-
-        z-index: 2000;
-    }
-
-
-    /* Open menu */
-
-    .nav-links.active {
-        left: 0;
-    }
-
-
-    /* Menu links */
-    /* Menu links */
-
-    .nav-links a {
-        color: white;
-        font-size: 17px;
-    }
-
-    .nav-links a::after {
-        background-color: white;
-    }
-
-
-    /* Keep side menu text white when navbar is scrolled */
-
-    .navbar.scrolled .nav-links a {
-        color: #ffffff;
-    }
-
-    .navbar.scrolled .nav-links a:hover {
-        color: #ffffff;
-    }
-
-    .navbar.scrolled .nav-links a::after {
-        background-color: #ffffff;
-    }
-
-    .navbar.scrolled .menu-btn {
-    color: #1d2b1f;
-    }
-
-    .navbar.scrolled .menu-btn.active {
-        color: #ffffff;
-    }
-
-
 
     /* =========================
        HERO
