@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Green Fork Bar & Restaurant</title>
+    <title>The Green Fork Bar</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,8 +17,17 @@
 
     <nav class="navbar">
 
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
+    <button
+        class="menu-btn"
+        id="menuButton"
+        type="button"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false">
+        ☰
+    </button>
+    
         <!-- Logo / Business Name -->
         <a href="index.html" class="logo">
             GREEN FORK BAR & RESTAURANT
@@ -29,7 +38,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="menu.html">MENU</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contactus.html">CONTACT</a></li>
         </ul>
 
         <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
