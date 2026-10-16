@@ -35,6 +35,7 @@ a {
     height: 85px;
     padding: 0 5vw;
     margin-bottom: 20px;
+    white-space: nowrap;
 
     display: flex;
     align-items: center;
@@ -44,7 +45,8 @@ a {
     left: 0;
     z-index: 9999;
 
-    background: #233727;
+
+    background: #f5f1e8;
 
     transition: background-color 0.3s ease,
                 box-shadow 0.3s ease;
@@ -52,7 +54,7 @@ a {
 /* Business name */
 
 .logo {
-    color: #fff;
+    color: #1d2b1f;;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -78,7 +80,7 @@ a {
 
 .nav-links a {
     position: relative;
-    color: #fff;
+    color: #1d2b1f;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -123,7 +125,7 @@ a {
     padding: 8px;
     border: 0;
     background: transparent;
-    color: #fff;
+    color: #1d2b1f;
     font-family: Arial, sans-serif;
     font-size: 28px;
     line-height: 1;
@@ -163,7 +165,7 @@ a {
 
         background: transparent;
         border: none;
-        color: #fff;
+        color: #1d2b1f;
 
         font-size: 30px;
         line-height: 1;
@@ -196,6 +198,11 @@ a {
         transform: translateX(-50%);
         font-size: clamp(10px, 3vw, 16px);
         letter-spacing: 1.5px;
+    }
+
+    .nav-logo img {
+        width: 50px;
+        height: 50px;
     }
 
     /* Slide-out navigation */
@@ -245,16 +252,51 @@ a {
 /* =========================
    FOOTER
 ========================= */
-/* =========================================================
-   FOOTER SOCIAL LINKS
-========================================================= */
+/* =========================
+   FIND US
+========================= */
+
+.find-section {
+    width: 100%;
+    min-height: 600px;
+
+    background-color: #f5f1e8;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+    padding: 80px 7vw;
+}
+
+
+/* LEFT SIDE */
+
+.find-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.find-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 8vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+
+    margin: 0 0 45px;
+
+    color: #1d2b1f;
+}
+
+
+/* SOCIAL ICONS */
 
 .social-links {
     display: flex;
-
-    justify-content: center;
     align-items: center;
-
     gap: 15px;
 }
 
@@ -262,11 +304,10 @@ a {
     width: 48px;
     height: 48px;
 
-    border: 1px solid #162b19;
+    border: 1px solid #1d2b1f;
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -276,26 +317,102 @@ a {
 .social-links img {
     width: 21px;
     height: 21px;
-
     object-fit: contain;
 
     filter: brightness(0) saturate(100%)
-            invert(14%) sepia(12%) saturate(900%)
-            hue-rotate(85deg) brightness(90%);
+            invert(14%) sepia(12%)
+            saturate(700%)
+            hue-rotate(85deg)
+            brightness(90%)
+            contrast(90%);
 
     transition: 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: #263628;
-    border-color: #1d2b1f;
-
+    background-color: #1d2b1f;
     transform: translateY(-4px);
 }
 
 .social-links a:hover img {
     filter: brightness(0) invert(1);
 }
+
+
+/* RIGHT SIDE - MAP */
+
+.find-map {
+    width: 55%;
+}
+
+.find-map iframe {
+    width: 100%;
+    height: 450px;
+
+    border: 0;
+    border-radius: 4px;
+
+    display: block;
+}
+
+
+
+/* FIX FIND US ON SMALLER SCREENS */
+@media (max-width: 900px) {
+    .find-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 35px;
+        min-height: auto;
+        padding: 50px 20px;
+    }
+
+    .find-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .find-content h2 {
+        font-size: clamp(48px, 10vw, 75px);
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+    }
+
+    .find-map {
+        width: 100%;
+    }
+
+    .find-map iframe {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 400px) {
+    .find-section {
+        padding: 40px 15px;
+    }
+
+    .find-content h2 {
+        font-size: 46px;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .find-map iframe {
+        height: 280px;
+    }
+}
+
 
 /* =========================
    FOOTER
