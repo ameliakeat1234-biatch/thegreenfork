@@ -489,13 +489,21 @@ a {
    LEFT - MENU IMAGE
 ========================= */
 
+
+
+/* MENU IMAGE SLIDESHOW */
 .menu-image-container {
+    position: relative;
     width: 55%;
 }
 
-.menu-image-container a {
+.menu-image-container > a {
+    position: relative;
     display: block;
+    overflow: hidden;
+    border-radius: 4px;
 }
+
 
 .menu-image-container img {
     width: 100%;
@@ -507,12 +515,57 @@ a {
 
     border-radius: 4px;
 
-    transition: transform 0.4s ease;
+    opacity: 1;
+    transition:
+        opacity 1.2s ease-in-out,
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+/* Image being faded out */
+.menu-image-container img.fade-out {
+    opacity: 0;
 }
 
-.menu-image-container img:hover {
+/* Smooth hover zoom */
+.menu-image-container > a:hover img {
     transform: scale(1.02);
 }
+
+/* Dark overlay */
+.menu-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Title over the image */
+.menu-image-overlay span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(35px, 5vw, 65px);
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #f5f1e8;
+    text-align: center;
+}
+
+/* Keep the image responsive on phones */
+@media (max-width: 900px) {
+    .menu-image-container {
+        width: 100%;
+    }
+
+    .menu-image-container img {
+        height: 450px;
+    }
+}
+
 
 
 /* =========================
@@ -561,99 +614,83 @@ a {
 }
 
 
+
 /* =========================
    DROPDOWN
 ========================= */
 
 .menu-dropdown {
     position: relative;
-
     width: 280px;
 }
 
-
 .menu-dropdown-btn {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
 
     padding: 16px 20px;
-
     background: transparent;
-
     border: 2px solid #ffffff;
-
     color: #ffffff;
 
     font-family: inherit;
-
     font-size: 15px;
-
     font-weight: 500;
-
     letter-spacing: 1.5px;
 
     cursor: pointer;
-
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-.menu-dropdown-btn:hover {
-    background-color: #ffffff;
+.menu-dropdown-btn:hover,
+.menu-dropdown-btn[aria-expanded="true"] {
+    background: #ffffff;
     color: #526b52;
 }
 
-
-
-
-/* Dropdown options */
-
 .menu-dropdown-options {
     display: none;
-
     position: absolute;
-
+    top: 100%;
     left: 0;
     right: 0;
 
-
-    background-color: #ffffff;
-
-    z-index: 10;
+    background: #ffffff;
+    z-index: 10000;
+    max-height: 65vh;
+    overflow-y: auto;
 }
-
 
 .menu-dropdown-options.active {
     display: block;
 }
 
-
 .menu-dropdown-options a {
     display: block;
-
     padding: 15px 20px;
 
     color: #1d2b1f;
-
-    text-decoration: none;
-
     font-size: 14px;
-
     font-weight: 700;
-
     letter-spacing: 1px;
 
-    transition: 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-.menu-dropdown-options a:hover {
-    background-color: #e8eadc;
-
+.menu-dropdown-options a:hover,
+.menu-dropdown-options a:focus-visible {
+    background: #e8eadc;
     color: #456b45;
+}
+
+@media (max-width: 900px) {
+    .menu-dropdown {
+        width: min(280px, 100%);
+    }
 }
 
 
@@ -908,173 +945,6 @@ a {
 }
 
 
-
-
-/* =========================
-   FIND US
-========================= */
-
-
-/* =========================
-   FIND US
-========================= */
-
-.find-section {
-    width: 100%;
-    min-height: 600px;
-
-    background-color: #e8eadc;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 80px;
-    padding: 80px 7vw;
-}
-
-
-/* LEFT SIDE */
-
-.find-content {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.find-content h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(65px, 8vw, 110px);
-    line-height: 0.9;
-    letter-spacing: -4px;
-
-    margin: 0 0 45px;
-
-    color: #1d2b1f;
-}
-
-
-/* SOCIAL ICONS */
-
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.social-links a {
-    width: 48px;
-    height: 48px;
-
-    border: 1px solid #1d2b1f;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.3s ease;
-}
-
-.social-links img {
-    width: 21px;
-    height: 21px;
-    object-fit: contain;
-
-    filter: brightness(0) saturate(100%)
-            invert(14%) sepia(12%)
-            saturate(700%)
-            hue-rotate(85deg)
-            brightness(90%)
-            contrast(90%);
-
-    transition: 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: #1d2b1f;
-    transform: translateY(-4px);
-}
-
-.social-links a:hover img {
-    filter: brightness(0) invert(1);
-}
-
-
-/* RIGHT SIDE - MAP */
-
-.find-map {
-    width: 55%;
-}
-
-.find-map iframe {
-    width: 100%;
-    height: 450px;
-
-    border: 0;
-    border-radius: 4px;
-
-    display: block;
-}
-
-
-
-
-/* =========================
-   FOOTER
-========================= */
-/* =========================================================
-   FOOTER SOCIAL LINKS
-========================================================= */
-
-.social-links {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 15px;
-}
-
-.social-links a {
-    width: 48px;
-    height: 48px;
-
-    border: 1px solid #162b19;
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.3s ease;
-}
-
-.social-links img {
-    width: 21px;
-    height: 21px;
-
-    object-fit: contain;
-
-    filter: brightness(0) saturate(100%)
-            invert(14%) sepia(12%) saturate(900%)
-            hue-rotate(85deg) brightness(90%);
-
-    transition: 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: #263628;
-    border-color: #1d2b1f;
-
-    transform: translateY(-4px);
-}
-
-.social-links a:hover img {
-    filter: brightness(0) invert(1);
-}
 
 /* =========================
    FOOTER
@@ -1546,25 +1416,114 @@ a {
    DESKTOP HOVER DROPDOWN
 ========================= */
 
-@media (min-width: 500px) {
 
-    .menu-dropdown:hover .menu-dropdown-options {
-        display: block;
-    }
+/* =========================
+   MENU IMAGE DESIGN
+========================= */
 
-    .menu-dropdown:hover .menu-dropdown-btn {
-        background-color: #ffffff;
-        color: #526b52;
+.menu-image-container {
+    position: relative;
+    width: 55%;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #1d2b1f;
+}
+
+.menu-image-container > a {
+    display: block;
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+/* Image sizing and smooth zoom */
+
+.menu-image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+
+    transition:
+        opacity 0.6s ease-in-out,
+        transform 0.8s ease;
+}
+
+.menu-image-container img.fade-out {
+    opacity: 0;
+}
+
+/* Dark gradient matching the menu cards */
+
+.menu-image-container > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(12, 23, 15, 0.88) 0%,
+        rgba(12, 23, 15, 0.25) 55%,
+        rgba(12, 23, 15, 0.05) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hover zoom */
+
+@media (hover: hover) and (pointer: fine) {
+    .menu-image-container > a:hover img {
+        transform: scale(1.06);
     }
 }
 
-@media (min-width: 901px) {
-    .menu-dropdown:hover .menu-dropdown-options {
-        display: block;
+/* Heading overlay */
+
+.menu-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+    padding: 25px;
+}
+
+.menu-image-overlay span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(35px, 4vw, 54px);
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-align: center;
+    color: #f5f1e8;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+    .menu-image-container {
+        width: 100%;
     }
 
-    .menu-dropdown:hover .menu-dropdown-btn {
-        background-color: #ffffff;
-        color: #526b52;
+    .menu-image-container > a {
+        height: 450px;
+    }
+
+    .menu-image-overlay span {
+        font-size: clamp(32px, 7vw, 45px);
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-image-container img {
+        transition: none;
+    }
+}
+
+
