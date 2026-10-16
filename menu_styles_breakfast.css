@@ -1,3 +1,26 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: #172319;
+}
+/* Business name */
+
+.logo {
+    color: #fff;;
+}
+
+
+.nav-links a {
+    color: #fff;
+}
+
+/* Hamburger button */
+
+.menu-btn {
+    color: #fff;
+}
 
 /* ==========================================
    THE GREEN FORK - BREAKFAST & BRUNCH
@@ -34,6 +57,7 @@
     max-width: 1050px;
     margin: 0 auto 38px;
     text-align: center;
+    padding-top: 20px;
 }
 
 .menu-brand {
