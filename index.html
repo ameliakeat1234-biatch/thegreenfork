@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Green Fork Bar</title>
+    <title>The Green Fork</title>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="format_styles.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
     
         <!-- Logo / Business Name -->
         <a href="index.html" class="logo">
-            GREEN FORK BAR & RESTAURANT
+            THE GREEN FORK RESTAURANT
         </a>
 
         <!-- Navigation Links -->
@@ -38,7 +39,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="menu.html">MENU</a></li>
-            <li><a href="contactus.html">CONTACT</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
         </ul>
 
         <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
@@ -105,16 +106,22 @@
 
 <section class="menus-section">
 
-    <!-- LEFT: FEATURED MENU IMAGE -->
-    <div class="menu-image-container">
 
-        <a id="menuLink" href="#" target="_blank">
+    <!-- LEFT: FEATURED MENU IMAGE -->
+    <div class="menu-image-container" id="menuImageContainer">
+
+        <a id="menuLink" href="breakfast.html">
             <img id="menuImage"
-                 src="images/boujee.jpg"
-                 alt="Breakfast Menu">
+                src="images/breakfast-img.jpg"
+                alt="Breakfast Menu">
+            
+            <div class="menu-image-overlay">
+                <span id="menuImageTitle">BREAKFAST</span>
+            </div>
         </a>
 
     </div>
+
 
 
     <!-- RIGHT: MENU CONTENT -->
@@ -129,29 +136,68 @@
 
 
         <!-- MENU DROPDOWN -->
+
+<!-- MENU DROPDOWN -->
         <div class="menu-dropdown">
 
-            <button class="menu-dropdown-btn" onclick="toggleMenuDropdown()">
+            <button
+                class="menu-dropdown-btn"
+                id="menuDropdownButton"
+                type="button"
+                onclick="toggleMenuDropdown()"
+                aria-expanded="false"
+                aria-controls="menuDropdown">
+
                 <span id="selectedMenu">OUR MENUS</span>
             </button>
 
             <div class="menu-dropdown-options" id="menuDropdown">
 
-                <a href="#" onclick="selectMenu('BREAKFAST', 'images/boujee.jpg', '#')">
-                    BREAKFAST
+                <a href="breakfast.html"
+                data-title="BREAKFAST & BRUNCH"
+                data-image="images/breakfast-img.jpg"
+                data-link="breakfast.html">
+                    Breakfast & Brunch
                 </a>
 
-                <a href="#" onclick="selectMenu('LUNCH', 'images/lunch.png', '#')">
-                    LUNCH
+                <a href="a-la-carte.html"
+                data-title="À LA CARTE"
+                data-image="images/a-la-carte.webp"
+                data-link="a-la-carte.html">
+                    À La Carte
                 </a>
 
-                <a href="#" onclick="selectMenu('DINNER', 'images/dinner.png', '#')">
-                    DINNER
+                <a href="lunch.html"
+                data-title="LUNCH"
+                data-image="images/lunch.jpg"
+                data-link="lunch.html">
+                    Lunch
+                </a>
+
+                <a href="drinks.html"
+                data-title="DRINKS"
+                data-image="images/drinks.jpg"
+                data-link="drinks.html">
+                    Drinks
+                </a>
+
+                <a href="bakery.html"
+                data-title="BAKERY & DESSERTS"
+                data-image="images/bakery.webp"
+                data-link="bakery.html">
+                    Bakery & Desserts
+                </a>
+
+                <a href="sunday-lunch.html"
+                data-title="SUNDAY CARVERY"
+                data-image="images/carvary.jpg"
+                data-link="sunday-lunch.html">
+                    Sunday Carvery
                 </a>
 
             </div>
-
         </div>
+
 
     </div>
 
@@ -206,7 +252,7 @@
                 Club Events and more. Contact here for further details.
             </p>
 
-            <a href="contact.html" class="book-here-btn">Book Here</a>
+            <a href="contactus.html" class="book-here-btn">CONTACT US</a>
 
         </div>
 
@@ -275,7 +321,7 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT US</a></li>
                 <li><a href="menu.html">MENU</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="contactus.html">CONTACT</a></li>
             </ul>
         </div>
 
