@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Green Fork Bar & Restaurant</title>
+    <title>The Green Fork</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="format_styles.css">
     <link rel="stylesheet" href="menu_styles.css">
-</head>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
 <body>
 
     <!-- =========================
@@ -18,11 +22,20 @@
 
     <nav class="navbar">
 
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
+    <button
+        class="menu-btn"
+        id="menuButton"
+        type="button"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false">
+        ☰
+    </button>
+    
         <!-- Logo / Business Name -->
         <a href="index.html" class="logo">
-            GREEN FORK BAR & RESTAURANT
+            THE GREEN FORK RESTAURANT
         </a>
 
         <!-- Navigation Links -->
@@ -30,7 +43,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="menu.html">MENU</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
         </ul>
 
         <a href="index.html" class="nav-logo"> <img src="images/logo.jpg" alt="The Green Fork Logo"> </a>
@@ -38,174 +51,92 @@
     </nav>
 
 
+    <!-- Keep your existing Green Fork navbar here -->
 
-<!-- =========================
-     OUR MENU
-========================= -->
+    <main>
+        <section class="menus-page">
 
-<section class="menu-section">
+            <div class="menus-heading">
+                <span class="eyebrow">THE GREEN FORK · BALBRIGGAN GOLF CLUB</span>
 
-    <div class="section-heading">
-        <span>Discover something delicious</span>
-        <h2>OUR MENU</h2>
-    </div>
+                <h1>Our Menus</h1>
 
-    <div class="menu-cards">
+                <p>
+                    From relaxed breakfasts to memorable dining,
+                    discover something delicious for every occasion.
+                </p>
 
-        <!-- STARTERS -->
-        <div class="menu-card">
+                <div class="heading-line"></div>
+            </div>
 
-            <a href="breakfast.html" class="menu-image-link">
-                <img src="images/breakfast-img.jpg" alt="Starters">
-            </a>
+            <div class="menus-grid">
 
-            <h3>BREAKFAST & BRUNCH</h3>
+                <a href="breakfast.html" class="menu-card">
+                    <img src="images/breakfast-img.jpg"
+                         alt="Breakfast and brunch">
+                    <div class="menu-card-overlay">
+                        <span class="menu-number">01</span>
+                        <h2>Breakfast & Brunch</h2>
+                        <span class="menu-link">EXPLORE MENU ↗</span>
+                    </div>
+                </a>
 
-            <p>Food</p>
+                <a href="breakfast.html" class="menu-card">
+                    <img src="images/a-la-carte.webp"
+                         alt="À la carte restaurant dishes">
+                    <div class="menu-card-overlay">
+                        <span class="menu-number">02</span>
+                        <h2>À La Carte</h2>
+                        <span class="menu-link">EXPLORE MENU ↗</span>
+                    </div>
+                </a>
 
-            <a href="menu.html#starters" class="menu-button">
-                VIEW STARTERS
-            </a>
+                <a href="breakfast.html" class="menu-card">
+                    <img src="images/lunch.jpg"
+                         alt="Lunch dishes">
+                    <div class="menu-card-overlay">
+                        <span class="menu-number">03</span>
+                        <h2>Lunch</h2>
+                        <span class="menu-link">EXPLORE MENU ↗</span>
+                    </div>
+                </a>
 
-        </div>
+                <a href="breakfast.html" class="menu-card">
+                    <img src="images/drinks.jpg"
+                         alt="Coffee and drinks">
+                    <div class="menu-card-overlay">
+                        <span class="menu-number">04</span>
+                        <h2>Drinks</h2>
+                        <span class="menu-link">EXPLORE MENU ↗</span>
+                    </div>
+                </a>
 
+                <a href="breakfast.html" class="menu-card">
+                    <img src="images/bakery.webp"
+                         alt="Fresh pastries and desserts">
+                    <div class="menu-card-overlay">
+                        <span class="menu-number">05</span>
+                        <h2>Bakery & Desserts</h2>
+                        <span class="menu-link">EXPLORE MENU ↗</span>
+                    </div>
+                </a>
 
-        <!-- MAIN COURSES -->
-        <div class="menu-card">
+                <a href="breakfast.html" class="menu-card">
+                    <img src="images/carvary.jpg"
+                         alt="Sunday lunch">
+                    <div class="menu-card-overlay">
+                        <span class="menu-number">06</span>
+                        <h2>Sunday Lunch</h2>
+                        <span class="menu-link">EXPLORE MENU ↗</span>
+                    </div>
+                </a>
 
-            <a href="menu.html#main-courses" class="menu-image-link">
-                <img src="images/cocktail-img.jpg" alt="Main Courses">
-            </a>
+            </div>
 
-            <h3>DRINKS MENU</h3>
+        </section>
+    </main>
 
-            <p>Food</p>
-
-            <a href="menu.html#main-courses" class="menu-button">
-                VIEW MAIN COURSES
-            </a>
-
-        </div>
-
-
-        <!-- DESSERTS -->
-        <div class="menu-card">
-
-            <a href="menu.html#desserts" class="menu-image-link">
-                <img src="images/desserts.jpg" alt="Desserts">
-            </a>
-
-            <h3>CLUBHOUSE FAVOURITES</h3>
-
-            <p>Food</p>
-
-            <a href="menu.html#desserts" class="menu-button">
-                VIEW DESSERTS
-            </a>
-
-        </div>
-
-        <div class="menu-card">
-
-            <a href="menu.html#desserts" class="menu-image-link">
-                <img src="images/desserts.jpg" alt="Desserts">
-            </a>
-
-            <h3>Á LA CARTE MENU</h3>
-
-            <p>Food</p>
-
-            <a href="menu.html#desserts" class="menu-button">
-                VIEW DESSERTS
-            </a>
-
-        </div>
-
-        <div class="menu-card">
-
-            <a href="menu.html#desserts" class="menu-image-link">
-                <img src="images/desserts.jpg" alt="Desserts">
-            </a>
-
-            <h3>SUNDAY CARVARY</h3>
-
-            <p>Food</p>
-
-            <a href="menu.html#desserts" class="menu-button">
-                VIEW DESSERTS
-            </a>
-
-        </div>
-
-        <div class="menu-card">
-
-            <a href="menu.html#desserts" class="menu-image-link">
-                <img src="images/desserts.jpg" alt="Desserts">
-            </a>
-
-            <h3>BAR FOOD</h3>
-
-            <p>Food</p>
-
-            <a href="menu.html#desserts" class="menu-button">
-                VIEW DESSERTS
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     BOOK A TABLE
-========================= -->
-
-<section class="booking-section">
-
-    <div class="booking-decoration"></div>
-
-    <div class="booking-content">
-
-        <span class="booking-label">
-            Reservations
-        </span>
-
-        <h2>BOOK A TABLE</h2>
-
-        <form class="booking-form">
-
-            <select>
-                <option>1 Person</option>
-                <option>2 People</option>
-                <option>3 People</option>
-                <option>4 People</option>
-                <option>5+ People</option>
-            </select>
-
-            <input type="date">
-
-            <select>
-                <option>7:00 pm</option>
-                <option>7:30 pm</option>
-                <option>8:00 pm</option>
-                <option>8:30 pm</option>
-                <option>9:00 pm</option>
-            </select>
-
-            <button type="submit">
-                BOOK A TABLE
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-    
-    <footer class="site-footer">
+<footer class="site-footer">
 
     <div class="footer-main">
 
@@ -217,7 +148,7 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT US</a></li>
                 <li><a href="menu.html">MENU</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="contactus.html">CONTACT</a></li>
             </ul>
         </div>
 
@@ -282,7 +213,10 @@
 
 
 
-<script src="script.js"></script>
+    <!-- Keep your existing Green Fork footer here -->
+
+    <script src="script.js"></script>
+    <script src="scriptmenu.js"></script>
 
 </body>
 </html>
